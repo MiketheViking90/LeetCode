@@ -5,24 +5,28 @@ import java.util.Stack;
  * The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
  */
 public class ValidParentheses {
+    Stack<Character> parentheses = new Stack<>();
 
     public boolean isValid(String input) {
-        Stack<Character> parentheses = new Stack<>();
-
         for (char cur : input.toCharArray()) {
             if (isOpenParentheses(cur)) {
                 parentheses.push(cur);
             } else {
-                if (parentheses.isEmpty()) {
-                    return false;
-                }
-                char matchParentheses = parentheses.pop();
-                if (!parenthesesMatch(matchParentheses, cur)) {
-                     return false;
-                }
+                return checkParentheses(cur);
             }
         }
         return parentheses.isEmpty();
+    }
+
+    private boolean checkParentheses(char cur) {
+        if (parentheses.isEmpty()) {
+            return true;
+        }
+        char matchParentheses = parentheses.pop();
+        if (!parenthesesMatch(matchParentheses, cur)) {
+            return true;
+        }
+        return false;
     }
 
     private boolean parenthesesMatch(char open, char close) {
