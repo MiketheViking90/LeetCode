@@ -1,4 +1,4 @@
-package domain;
+import domain.ListNode;
 
 public class DeleteNodeInLinkedList {
 
