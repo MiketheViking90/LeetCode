@@ -24,6 +24,17 @@ public class ListNode {
         return n1;
     }
 
+    public static ListNode append(ListNode head, int val) {
+        ListNode n = head;
+        while (n.next != null) {
+            n = n.next;
+        }
+        ListNode tail = new ListNode(val);
+        n.next = tail;
+
+        return head;
+    }
+
     public static void printList(ListNode n1) {
         StringBuffer val = new StringBuffer();
 
