@@ -1,3 +1,5 @@
+package algorithms;
+
 import domain.ListNode;
 
 public class DeleteKthFromLast {

@@ -1,3 +1,5 @@
+package algorithms;
+
 public class ArithmeticSlices {
     public int numberOfArithmeticSlices(int[] A) {
         int len = A.length;

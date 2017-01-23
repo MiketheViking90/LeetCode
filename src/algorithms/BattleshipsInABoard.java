@@ -1,3 +1,5 @@
+package algorithms;
+
 public class BattleshipsInABoard {
     public int countBattleships(char[][] board) {
         int rows = board.length;

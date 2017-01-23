@@ -1,3 +1,5 @@
+package algorithms;
+
 import static java.lang.Integer.*;
 
 public class BitManipulation {
