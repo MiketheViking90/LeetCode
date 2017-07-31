@@ -45,4 +45,5 @@ public class BinarySearch {
         System.out.println(i);
         System.out.println(bSearchR(nums, 14));
     }
+
 }
