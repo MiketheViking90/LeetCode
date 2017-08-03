@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.*;
+
 public class TreeNode {
     public int val;
     public TreeNode left;
@@ -42,6 +44,7 @@ public class TreeNode {
 
 
     }
+
     public static TreeNode makeTree() {
         TreeNode root = new TreeNode(1);
         TreeNode node1 = new TreeNode(2);
@@ -62,4 +65,31 @@ public class TreeNode {
 
         return root;
     }
+
+    public static void print(TreeNode root) {
+        Map<Integer, List<String>> map = new HashMap<>();
+
+        buildLevelMap(map, 0, root);
+
+        for (int lvl : map.keySet()) {
+            List<String> vals = map.get(lvl);
+            System.out.println(Arrays.toString(vals.toArray()));
+        }
+    }
+
+    private static void buildLevelMap(Map<Integer, List<String>> map, int level, TreeNode root) {
+        List<String> curLevel = map.getOrDefault(level, new ArrayList<>());
+
+        if (root == null) {
+            curLevel.add("/");
+            map.put(level, curLevel);
+            return;
+        }
+        curLevel.add(String.valueOf(root.val));
+        map.put(level, curLevel);
+
+        buildLevelMap(map, level + 1, root.left);
+        buildLevelMap(map, level + 1, root.right);
+    }
+
 }
