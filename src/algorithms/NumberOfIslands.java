@@ -56,6 +56,6 @@ public class NumberOfIslands {
 
         NumberOfIslands numI = new NumberOfIslands();
         int islands = numI.numIslands(grid);
-        System.out.println(islandsend);
+        System.out.println(islands);
     }
 }
