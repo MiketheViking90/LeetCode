@@ -18,7 +18,9 @@ public class MaximumSwap {
             int curNum = digits[i];
             if (curNum >= curMax) {
                 maxAfter[i] = -1;
-                digitToLastIndex.put(curNum, i);
+                if (!digitToLastIndex.containsKey(curNum)) {
+                    digitToLastIndex.put(curNum, i);
+                }
                 curMax = curNum;
             } else {
                 maxAfter[i] = curMax;
@@ -64,7 +66,7 @@ public class MaximumSwap {
 
     public static void main(String[] args) {
         MaximumSwap ms = new MaximumSwap();
-        int swap = ms.maximumSwap(1234567);
+        int swap = ms.maximumSwap(98368);
         System.out.println(swap);
     }
 }
