@@ -24,7 +24,6 @@ public class MergeIntervals {
             return i1.start - i2.start;
         };
 
-        if (intervals.si)
         intervals.sort(startComparator);
         List<Interval> res = new ArrayList<>();
 
