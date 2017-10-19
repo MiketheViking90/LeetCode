@@ -19,22 +19,23 @@ public class MaxWidthBinaryTree {
         toVisit.offer(root);
         indicies.offer(0);
 
-        while(!toVisit.isEmpty()) {
+        while (!toVisit.isEmpty()) {
             int size = toVisit.size();
             int left = 0;
             int right = 0;
-            for(int i = 0; i < size; i++) {
+            for (int i = 0; i < size; i++) {
                 TreeNode node = toVisit.poll();
                 int index = indicies.poll();
-                if(i == 0)  left = index;
-                if(i == size-1)  right = index;
-                if(node.left != null) {
+                if (index == 0) left = index;
+                if (index == size-1) right = index;
+
+                if (node.left != null) {
                     toVisit.offer(node.left);
-                    indicies.offer(index*2);
+                    indicies.offer(2*index);
                 }
-                if(node.right != null) {
+                if (node.right!= null) {
                     toVisit.offer(node.right);
-                    indicies.offer(index*2 + 1);
+                    indicies.offer(2*index + 1);
                 }
             }
             maxWidth = Math.max(maxWidth, right - left + 1);
