@@ -1,11 +1,11 @@
 package domain;
 
-public class Queue {
+public class Queue1 {
 
     ListNode start;
     ListNode end;
 
-    public Queue(int d) {
+    public Queue1(int d) {
         start = new ListNode(d);
         end = start;
     }
@@ -26,7 +26,7 @@ public class Queue {
     }
 
     public static void main(String[] args) {
-        Queue q = new Queue(1);
+        Queue1 q = new Queue1(1);
         q.enqueue(2);
         q.enqueue(3);
         q.enqueue(4);
