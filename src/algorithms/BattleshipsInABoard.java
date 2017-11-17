@@ -36,8 +36,44 @@ public class BattleshipsInABoard {
         return val == 'X';
     }
 
+    public int countBattleships2(char[][] board) {
+        int r = board.length;
+        int c= board[0].length;
+
+        int cnt = 0;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                boolean shouldCount = shouldCount(i, j, board);
+                if (shouldCount) {
+                    cnt++;
+                }
+            }
+        }
+
+        return cnt;
+    }
+
+    private boolean shouldCount(int i, int j, char[][] board) {
+        if (board[i][j] != 'X') {
+            return false;
+        }
+
+        int r = board.length;
+        int c= board[0].length;
+
+        if (i == 0 && j == 0) {
+            return true;
+        }
+        if (i == 0) {
+            return board[i][j-1] != 'X';
+        }
+        if (j == 0) {
+            return board[i-1][j] != 'X';
+        }
+        return board[i-1][j] != 'X' && board[i][j-1] != 'X';
+    }
+
     public static void main(String[] args) {
         BattleshipsInABoard bb = new BattleshipsInABoard();
-
     }
 }
