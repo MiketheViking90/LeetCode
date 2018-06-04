@@ -11,7 +11,7 @@ public class MoveZeroes2 {
         while (f < nums.length) {
             if (nums[s] == 0 && nums[f] != 0) {
                 swap(nums, s, f);
-                s++;g
+                s++;
                 f++;
             }
 
