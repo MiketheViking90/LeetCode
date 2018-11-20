@@ -16,6 +16,7 @@ public class Player {
     public void attack() {
         if (weapon == null) {
             System.out.println("No weapon!");
+            System.out.println();
             return;
         }
 
