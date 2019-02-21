@@ -22,6 +22,6 @@ public class QueueReconstructionByHeight {
         }
 
         int[][] sorted = new int[people.length][2];
-
+        return sorted;
     }
 }
