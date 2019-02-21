@@ -37,4 +37,8 @@ public class MinimumCostForTickets {
         }
         return M[N];
     }
+
+    public static void main(String[] args) {
+        Boolean.valueOf("true");
+    }
 }
