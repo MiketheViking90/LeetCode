@@ -3,35 +3,37 @@ package eighteen.algo;
 import seventeen.domain.TreeNode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class FindLargestValueInEachTreeRow {
     public List<Integer> largestValues(TreeNode root) {
-        Map<Integer, Integer> rowMax = new HashMap<>();
+        List<Integer> rowMax = new ArrayList<>();
         rowTrav(root, 0, rowMax);
-
-        List<Integer> maxs = new ArrayList<>();
-        int row = 0;
-        while (rowMax.containsKey(row++)) {
-            int max = rowMax.get(row);
-            maxs.add(max);
-        }
-        return maxs;
+        return rowMax;
     }
 
-    private void rowTrav(TreeNode root, int row, Map<Integer, Integer> rowMax) {
+    private void rowTrav(TreeNode root, int row, List<Integer> rowMax) {
         if (root == null) {
             return;
         }
 
         int val = root.val;
-        if (!rowMax.containsKey(row)) {
-            rowMax.put(row, val);
+        if (rowMax.size() <= row) {
+            rowMax.add(val);
         } else {
-            int cur = rowMax.get(cur);
-            rowMax.put(row, Math.max())
+            int curMax = Math.max(val, rowMax.get(row));
+            rowMax.set(row, curMax);
         }
+
+        rowTrav(root.left, row+1, rowMax);
+        rowTrav(root.right, row+1, rowMax);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("hello");
+        FindLargestValueInEachTreeRow fl = new FindLargestValueInEachTreeRow();
+        List<Integer> max = fl.largestValues(TreeNode.makeTree());
+        System.out.println(max);
+        System.out.println("done");
     }
 }
