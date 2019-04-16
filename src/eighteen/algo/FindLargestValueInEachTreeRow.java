@@ -35,5 +35,8 @@ public class FindLargestValueInEachTreeRow {
         List<Integer> max = fl.largestValues(TreeNode.makeTree());
         System.out.println(max);
         System.out.println("done");
+
+        System.out.println("google.com/images/Lyft".hashCode());
+        System.out.println("google.com/images/Airbnb".hashCode());
     }
 }
