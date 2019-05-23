@@ -1,7 +1,6 @@
 package eighteen.algo;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
