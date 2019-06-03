@@ -1,4 +1,4 @@
-package objectorienteddesign.blackJack;
+package objectorienteddesign.blackjack;
 
 public class Dealer {
     Deck deck;

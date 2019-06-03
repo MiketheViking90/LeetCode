@@ -1,4 +1,4 @@
-package objectorienteddesign.blackJack;
+package objectorienteddesign.blackjack;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

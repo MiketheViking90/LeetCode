@@ -1,4 +1,4 @@
-package objectorienteddesign.callCenter;
+package objectorienteddesign.callcenter;
 
 public class Director extends Employee {
     @Override

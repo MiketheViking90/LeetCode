@@ -1,4 +1,4 @@
-package objectorienteddesign.blackJack;
+package objectorienteddesign.blackjack;
 
 public enum Suite {
     HEARTS,

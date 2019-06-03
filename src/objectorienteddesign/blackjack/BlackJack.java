@@ -1,4 +1,4 @@
-package objectorienteddesign.blackJack;
+package objectorienteddesign.blackjack;
 
 import java.util.ArrayList;
 import java.util.List;
