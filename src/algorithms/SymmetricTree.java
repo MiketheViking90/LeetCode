@@ -1,6 +1,6 @@
 package algorithms;
 
-import seventeen.domain.TreeNode;
+import archive.domain.TreeNode;
 
 public class SymmetricTree {
     public boolean isSymmetric(TreeNode root) {

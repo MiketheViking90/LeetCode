@@ -1,6 +1,6 @@
 package algorithms;
 
-import seventeen.domain.TreeNode;
+import archive.domain.TreeNode;
 
 public class FlipEquivalentBinaryTrees {
     public boolean flipEquiv(TreeNode root1, TreeNode root2) {

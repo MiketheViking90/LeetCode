@@ -1,6 +1,6 @@
 package algorithms;
 
-import seventeen.domain.TreeNode;
+import archive.domain.TreeNode;
 
 public class InvertBinaryTree {
     public TreeNode invertTree(TreeNode root) {

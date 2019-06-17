@@ -1,6 +1,6 @@
 package algorithms;
 
-import seventeen.domain.TreeNode;
+import archive.domain.TreeNode;
 
 public class TrimBinarySearchTree {
     public TreeNode trimBST(TreeNode root, int L, int R) {

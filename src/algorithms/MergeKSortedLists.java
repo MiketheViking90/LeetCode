@@ -1,6 +1,6 @@
 package algorithms;
 
-import seventeen.domain.ListNode;
+import archive.domain.ListNode;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

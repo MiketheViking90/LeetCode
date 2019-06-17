@@ -1,6 +1,6 @@
 package algorithms;
 
-import seventeen.domain.Node;
+import archive.domain.Node;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

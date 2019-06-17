@@ -1,7 +1,7 @@
 package algorithms;
 
-import seventeen.algorithms.MaxBinaryTree;
-import seventeen.domain.TreeNode;
+import archive.algorithms.MaxBinaryTree;
+import archive.domain.TreeNode;
 
 public class MaximumBinaryTree {
 

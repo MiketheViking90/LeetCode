@@ -1,6 +1,6 @@
 package algorithms;
 
-import seventeen.domain.TreeNode;
+import archive.domain.TreeNode;
 
 public class ConvertSortedArraytoBinarySearchTree {
     public TreeNode sortedArrayToBST(int[] nums) {

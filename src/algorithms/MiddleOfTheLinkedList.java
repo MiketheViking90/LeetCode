@@ -1,6 +1,6 @@
 package algorithms;
 
-import seventeen.domain.ListNode;
+import archive.domain.ListNode;
 
 public class MiddleOfTheLinkedList {
     public ListNode middleNode(ListNode head) {
