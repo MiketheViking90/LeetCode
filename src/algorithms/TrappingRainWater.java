@@ -3,26 +3,30 @@ package algorithms;
 public class TrappingRainWater {
     public int trap(int[] height) {
         int N = height.length;
+        int[] maxL = new int[N];
+        int[] maxR = new int[N];
 
+        int maxLeft = 0;
         for (int i = 0; i < N; i++) {
-            int l = getMaxLeft(i, height);
-            int r = getMaxRight(i, height);
+            int h = height[i];
+            maxLeft = Math.max(maxLeft, h);
+            maxL[i] = maxLeft;
         }
-        return 0;
-    }
 
-    private int getMaxLeft(int h, int[] height) {
-        int max = height[h];
-        for (int i = h; i >= 0; i++) {
+        int maxRight = 0;
+        for (int i = N-1; i >= 0; i--) {
+            int h = height[i];
+            maxRight = Math.max(maxRight, h);
+            maxR[i] = maxRight;
         }
-        return max;
-    }
 
-    private int getMaxRight(int h, int[] height) {
-        int max = height[h];
-        for (int i = h; i < height.length; i++) {
-            
+        int area = 0;
+        for (int i = 0; i < N; i++) {
+            int h = height[i];
+            int water = Math.min(maxL[i], maxR[i]) - h;
+            area += water;
         }
-        return max;
+
+        return area;
     }
 }
