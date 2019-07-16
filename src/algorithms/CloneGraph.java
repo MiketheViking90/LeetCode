@@ -11,6 +11,22 @@ public class CloneGraph {
         return dfs(node);
     }
 
+    public Node dfs2(Node toClone) {
+        if (toClone == null) {
+            return null;
+        }
+        if (map.containsKey(toClone.val)) {
+            return map.get(toClone.val);
+        }
+
+        Node clone = new Node(toClone.val, new ArrayList<>());
+        map.put(toClone.val, clone);
+        for (Node adj : toClone.neighbors) {
+            clone.neighbors.add(dfs2(adj));
+        }
+        return clone;
+    }
+
     private Node dfs(Node toCopy) {
         if (toCopy == null) {
             return null;
