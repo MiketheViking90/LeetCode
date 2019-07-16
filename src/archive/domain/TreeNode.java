@@ -63,6 +63,8 @@ public class TreeNode {
         node2.left = node5;
         node2.right = node6;
 
+        node6.right = new TreeNode(8);
+
         return root;
     }
 
