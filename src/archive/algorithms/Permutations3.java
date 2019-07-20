@@ -5,31 +5,36 @@ import java.util.List;
 
 public class Permutations3 {
 
-    public List<List<String>> permute(String[] strs) {
-        List<List<String>> perms = new ArrayList<>();
-        getPerms(new ArrayList<>(), perms, 0, strs);
+    public List<List<Integer>> permute(int[] strs) {
+        List<List<Integer>> perms = new ArrayList<>();
+        boolean[] used = new boolean[strs.length];
+        getPerms(perms, new ArrayList<>(), used, strs);
         return perms;
     }
 
-    private void getPerms(List<String> curPerm, List<List<String>> perms, int i, String[] strs) {
-        if (i == strs.length) {
-            List<String> newPerm = new ArrayList<>(curPerm);
+    private void getPerms(List<List<Integer>> perms, List<Integer> curPerm, boolean[] used, int[] strs) {
+        if (curPerm.size() == strs.length) {
+            List<Integer> newPerm = new ArrayList<>(curPerm);
+            perms.add(newPerm);
             return;
         }
 
-        List<String> nextPerm = new ArrayList<>(curPerm);
+        for (int i = 0; i < strs.length; i++) {
+            if (used[i]) {
+                continue;
+            }
 
-        for (int j = i; j < strs.length; j++) {
-            String str = strs[j];
-            curPerm.add(str);
-            getPerms(curPerm, perms, i+1, strs);
+            curPerm.add(strs[i]);
+            used[i] = true;
+            getPerms(perms, curPerm, used, strs);
+            used[i] = false;
             curPerm.remove(curPerm.size()-1);
         }
     }
 
     public static void main(String[] args) {
         Permutations3 perm = new Permutations3();
-        String[] strings = {"a", "b", "c", "d"};
-        perm.permute(strings);
+        int[] strings = {1,2,3,4};
+        System.out.println(perm.permute(strings));
     }
 }
