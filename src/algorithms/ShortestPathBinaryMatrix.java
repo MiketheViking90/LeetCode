@@ -47,7 +47,7 @@ public class ShortestPathBinaryMatrix {
         List<int[]> neighs = new ArrayList<>();
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
-                if ((inGrid(x+i, y+j, grid) && grid[x+i][y+j] == 0) {
+                if ((inGrid(x+i, y+j, grid) && grid[x+i][y+j] == 0)) {
                     int[] coord = {x+i, y+j};
                     neighs.add(coord);
                 }
