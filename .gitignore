@@ -16,7 +16,6 @@ hs_err_pid*
 .project
 .settings
 .DS_Store
-.gitignore
 .idea
 LeetCode.iml
 out/
